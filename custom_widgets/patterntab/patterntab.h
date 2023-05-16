@@ -3,7 +3,7 @@
 
 #include <QTreeWidget>
 #include <QList>
-#include <QMap>
+#include <QHash>
 
 #include <models/pattern/pattern.h>
 #include <models/book/Book.h>
@@ -13,12 +13,17 @@
 class PatternTab : public QTreeWidget {
 public:
     PatternTab(QWidget* parent = nullptr);
+    PatternTab(Book* existing_book, QWidget* parent = nullptr);
+
+    constexpr Book* currentBook() const {
+        return this->_patterns;
+    }
 
     void handleClick(QTreeWidgetItem *item, PatternView* pdfview);
 
 private:
-    using PatternTabMap = QMap<QTreeWidgetItem*, const Pattern*>;
-    using NameTabMap = QMap<QString, QTreeWidgetItem*>;
+    using PatternTabMap = QHash<QTreeWidgetItem*, const Pattern*>;
+    using NameTabMap = QHash<QString, QTreeWidgetItem*>;
 
     Book* _patterns;
     PatternTabMap _tabMap;
@@ -34,13 +39,4 @@ private:
 
 // Debug macros
 
-#ifdef PATTERNTAB_DEBUG_ON
-    #define PATTERNTAB_LOG(expr) qDebug() << expr;
-    #define PATTERNTAB_DEBUG(expr) expr;
-#ifndef _ADD_DEBUG_CONSOLE
-    #define _ADD_DEBUG_CONSOLE
-#endif
-#else
-    #define PATTERNTAB_LOG(expr) void;
-    #define PATTERNTAB_DEBUG(expr) void;
-#endif
+

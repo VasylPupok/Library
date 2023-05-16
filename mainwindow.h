@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <QTreeWidgetItem>
 
+#include "models/book/Book.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,17 +20,17 @@ public:
 
 private slots:
 
+	void on_viewFrameChanged(QFrame* newFrame);
+
 	// generated in QtCreatorSlots
 	void on_patternsTree_itemClicked(QTreeWidgetItem* item, int column);
-
-	void setViewFrame(QFrame* newFrame);
-
-    void on_examplesTree_itemClicked(QTreeWidgetItem *item, int column);
+	void on_examplesTree_itemClicked(QTreeWidgetItem* item, int column);
+    void on_tabWidget_tabBarClicked(int index);
 
 private:
 	Ui::MainWindow* ui;
 
-	
+	Book* _currentBook;
 };
 
 #endif // MAINWINDOW_H

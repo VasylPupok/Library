@@ -1,21 +1,30 @@
 
 #include "patterntab.h"
 #include "paths.h"
+#include "debug.h"
 
 PatternTab::PatternTab(QWidget* parent) :
 	QTreeWidget(parent),
-	_patterns(new Book(PATTERNS_FOLDER))
+	_patterns(new Book(PATTERNS_DIRECTORY))
+{
+	this->init();
+}
+
+PatternTab::PatternTab(Book* existing_book, QWidget* parent) :
+	QTreeWidget(parent),
+	_patterns(existing_book)
 {
 	this->init();
 }
 
 void PatternTab::handleClick(QTreeWidgetItem* item, PatternView* pdfview) {
 	if (this->_tabMap.contains(item)) {
-		PATTERNTAB_LOG("Name of clicked pattern:");
-		PATTERNTAB_LOG(this->_tabMap[item]->name());
+		DEBUG_LOG("Name of clicked pattern:");
+		DEBUG_LOG(this->_tabMap[item]->name());
 
 		pdfview->setDocument(this->_tabMap[item]->getDescription());
 	}
+
 }
 
 void PatternTab::init() {
@@ -31,11 +40,11 @@ void PatternTab::init() {
 		this->_tabMap.insert(patternNameTreeItem, &p);
 	}
 
-	PATTERNTAB_DEBUG(
-		PATTERNTAB_LOG("Retrieved patterns");
+	DEBUG_EXPR(
+		DEBUG_LOG("Retrieved patterns");
 		for (auto& i : this->_patterns->patterns()) {
-			PATTERNTAB_LOG(i.name());
-			PATTERNTAB_LOG(i.type());
+			DEBUG_LOG(i.name());
+			DEBUG_LOG(i.type());
 		}
 	);
 }

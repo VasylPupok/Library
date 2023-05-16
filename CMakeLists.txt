@@ -4,7 +4,7 @@ project(Library VERSION 0.1 LANGUAGES CXX)
 
 # debugging macros
 add_compile_definitions(
-    PATTERNTAB_DEBUG_ON
+    DEBUG_ON
     _ADD_DEBUG_CONSOLE
 )
 
@@ -42,17 +42,26 @@ set(PROJECT_SOURCES
     mainwindow.h
     mainwindow.ui
 
+    debug.h
     paths.h
+    
 
     custom_widgets/patterntab/patterntab.h
     custom_widgets/patterntab/patterntab.cpp
-
     custom_widgets/patternview/patternview.h
     custom_widgets/patternview/patternview.cpp
+    custom_widgets/exampletab/exampletab.h
+    custom_widgets/exampletab/exampletab.cpp
+    custom_widgets/source_code_view/sourcecodeview.h
+    custom_widgets/source_code_view/sourcecodeview.cpp
 
     models/pattern/pattern.h
     models/pattern/pattern.cpp
-    
+    models/pattern/code_examples/codeexamples.h
+    models/pattern/code_examples/codeexamples.cpp
+    models/pattern/code_examples/example.h
+    models/pattern/code_examples/example.cpp
+
     models/book/book.h
     models/book/book.cpp
 )

@@ -4,8 +4,8 @@
 #include <QString>
 #include <QPdfDocument>
 
-#include "paths.h"
-
+#include <paths.h>
+#include "code_examples/codeexamples.h"
 
 // TODO add exceptions for case, when info file was not found
 
@@ -39,9 +39,18 @@ public:
 
     QPdfDocument* getDescription() const;
 
+    CodeExamples* getExamples() const {
+        if (!this->_examples) {
+            this->_examples = new CodeExamples(this->_path + EXAMPLES_DIRECTORY);
+        }
+        return this->_examples;
+    }
+
 private:
     QString _path;
     QString _name;
     QJsonObject _info;
+
     mutable QPdfDocument* _description = nullptr;
+    mutable CodeExamples* _examples = nullptr;
 };

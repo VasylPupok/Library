@@ -66,13 +66,18 @@
          </attribute>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="0">
-           <widget class="QTreeWidget" name="examplesTree">
+           <widget class="ExampleTab" name="examplesTree">
             <property name="sizePolicy">
              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <column>
+             <property name="text">
+              <string>Code examples</string>
+             </property>
+            </column>
            </widget>
           </item>
          </layout>
@@ -110,6 +115,11 @@
    <class>PatternTab</class>
    <extends>QTreeWidget</extends>
    <header>custom_widgets/patterntab/patterntab.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ExampleTab</class>
+   <extends>QTreeWidget</extends>
+   <header>custom_widgets/exampletab/exampletab.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

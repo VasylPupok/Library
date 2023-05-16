@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QString>
 #include <QJsonObject>
 #include <models/pattern/pattern.h>
 

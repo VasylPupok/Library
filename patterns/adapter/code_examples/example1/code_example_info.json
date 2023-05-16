@@ -1,0 +1,5 @@
+{
+  "name" : "Roman calculator",
+  "language": "C++",
+  "sources" : ["main.cpp"]
+}
