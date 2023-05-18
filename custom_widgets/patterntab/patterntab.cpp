@@ -24,10 +24,30 @@ void PatternTab::handleClick(QTreeWidgetItem* item, PatternView* pdfview) {
 
 		pdfview->setDocument(this->_tabMap[item]->getDescription());
 	}
+	else {
+		return;
+	}
 
 }
 
+void PatternTab::search(const QString& prefix) {
+	const Pattern* p = nullptr;
+	QTreeWidgetItem* type = nullptr;
+	for (QTreeWidgetItem* item : this->_tabMap.keys()) {
+		p = this->_tabMap[item];
+		type = this->_nameMap[p->type()];
+		if (p->name().startsWith(prefix)) {
+			type->addChild(item);
+		}
+		else {
+			type->removeChild(item);
+		}
+		type->sortChildren(0, Qt::AscendingOrder);
+	}
+}
+
 void PatternTab::init() {
+
 	for (const Pattern& p : this->_patterns->patterns()) {
 		if (!this->_nameMap.contains(p.type())) {
 			QTreeWidgetItem* newType = new QTreeWidgetItem(this);
@@ -38,6 +58,12 @@ void PatternTab::init() {
 		QTreeWidgetItem* patternNameTreeItem = new QTreeWidgetItem(this->_nameMap[p.type()]);
 		patternNameTreeItem->setText(0, p.name());
 		this->_tabMap.insert(patternNameTreeItem, &p);
+	}
+
+	this->sortItems(0, Qt::AscendingOrder);
+
+	for (auto& i : this->_nameMap) {
+		i->sortChildren(0, Qt::AscendingOrder);
 	}
 
 	DEBUG_EXPR(

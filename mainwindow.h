@@ -26,6 +26,9 @@ private slots:
 	void on_patternsTree_itemClicked(QTreeWidgetItem* item, int column);
 	void on_examplesTree_itemClicked(QTreeWidgetItem* item, int column);
     void on_tabWidget_tabBarClicked(int index);
+    void on_descriptionSearchLine_textChanged(const QString &arg1);
+    void on_filterTypeSelector_currentIndexChanged(int index);
+    void on_sourcesSearchLine_textChanged(const QString &arg1);
 
 private:
 	Ui::MainWindow* ui;

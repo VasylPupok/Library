@@ -1,5 +1,4 @@
 {
-  "name": "Adapter",
-  "id": 0,
-  "pattern_type": "Structural"
+  "name": "Адаптер",
+  "pattern_type": "Структурні паттерни"
 }

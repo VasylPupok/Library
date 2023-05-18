@@ -20,6 +20,9 @@ public:
     }
 
     void handleClick(QTreeWidgetItem *item, PatternView* pdfview);
+    
+    void search(const QString& prefix);
+
 
 private:
     using PatternTabMap = QHash<QTreeWidgetItem*, const Pattern*>;
@@ -27,9 +30,6 @@ private:
 
     Book* _patterns;
     PatternTabMap _tabMap;
-
-    // kinda usless for now map "name" - "tab", but probably it will be useful in future
-    // The only usage - init() method, where it used for detecting already added names
     NameTabMap _nameMap;
 
     void init();

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>954</width>
-    <height>725</height>
+    <width>966</width>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,33 +39,80 @@
          </sizepolicy>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="descriptionTab">
          <property name="autoFillBackground">
           <bool>false</bool>
          </property>
          <attribute name="title">
-          <string>Description</string>
+          <string>Опис</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
+          <item row="1" column="0">
            <widget class="PatternTab" name="patternsTree">
             <column>
              <property name="text">
-              <string>Patterns</string>
+              <string>Паттерни</string>
              </property>
             </column>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLineEdit" name="descriptionSearchLine">
+            <property name="placeholderText">
+             <string>Пошук</string>
+            </property>
            </widget>
           </item>
          </layout>
         </widget>
         <widget class="QWidget" name="codeExamplesTab">
          <attribute name="title">
-          <string>Code examples</string>
+          <string>Приклади коду</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="searchWidget">
+            <item>
+             <widget class="QComboBox" name="filterTypeSelector">
+              <item>
+               <property name="text">
+                <string>Пошук за типом</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Пошук за ім'ям</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Пошук за мовою програмування</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Пошук за іменем проекту</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Пошук за іменем файлу</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="sourcesSearchLine">
+              <property name="placeholderText">
+               <string>Пошук</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="6" column="0">
            <widget class="ExampleTab" name="examplesTree">
             <property name="sizePolicy">
              <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
@@ -75,7 +122,7 @@
             </property>
             <column>
              <property name="text">
-              <string>Code examples</string>
+              <string>Паттерни</string>
              </property>
             </column>
            </widget>
@@ -103,7 +150,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>954</width>
+     <width>966</width>
      <height>22</height>
     </rect>
    </property>

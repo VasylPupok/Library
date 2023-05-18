@@ -1,6 +1,10 @@
 {
   "folders": [
     "adapter",
-    "visitor"
+    "visitor",
+    "strategy",
+    "template_method",
+    "singleton",
+    "observer"
   ]
 }
