@@ -5,12 +5,12 @@
 
 PatternTab::PatternTab(QWidget* parent) :
 	QTreeWidget(parent),
-	_patterns(new Book(PATTERNS_DIRECTORY))
+	_patterns(new Library(PATTERNS_DIRECTORY))
 {
 	this->init();
 }
 
-PatternTab::PatternTab(Book* existing_book, QWidget* parent) :
+PatternTab::PatternTab(Library* existing_book, QWidget* parent) :
 	QTreeWidget(parent),
 	_patterns(existing_book)
 {

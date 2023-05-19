@@ -1,11 +1,11 @@
 
-#include "Book.h"
+#include "Library.h"
 #include "paths.h"
 
 #include <QFile>
 #include <QJsonDocument>
 
-const QSet<QString>& Book::getPatternTypes() const {
+const QSet<QString>& Library::getPatternTypes() const {
     if (!this->_patternTypes) {
         this->_patternTypes = new QSet<QString>;
         for (const Pattern& p : this->_patterns) {
@@ -15,7 +15,7 @@ const QSet<QString>& Book::getPatternTypes() const {
     return *this->_patternTypes;
 }
 
-void Book::readInfoFile() {
+void Library::readInfoFile() {
     QFile jsonFile(this->_path + BOOK_INFO_FILE_NAME);
     jsonFile.open(QIODevice::ReadOnly | QIODevice::Text);
 
@@ -24,7 +24,7 @@ void Book::readInfoFile() {
     jsonFile.close();
 }
 
-Book::Book(const QString& path) :
+Library::Library(const QString& path) :
 	_path(path)
 {
     readInfoFile();

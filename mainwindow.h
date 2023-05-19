@@ -5,7 +5,7 @@
 #include <QMainWindow>
 #include <QTreeWidgetItem>
 
-#include "models/book/Book.h"
+#include "models/library/Library.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,7 +33,7 @@ private slots:
 private:
 	Ui::MainWindow* ui;
 
-	Book* _currentBook;
+	Library* _currentBook;
 };
 
 #endif // MAINWINDOW_H

@@ -5,6 +5,22 @@
     "strategy",
     "template_method",
     "singleton",
-    "observer"
+    "observer",
+    "flyweight",
+    "iterator",
+    "mediator",
+    "memento",
+    "prototype",
+    "proxy",
+    "responsibility_chain",
+    "state",
+    "factory_method",
+    "abstract_factory",
+    "builder",
+    "bridge",
+    "command",
+    "composite",
+    "decorator",
+    "facade"
   ]
 }

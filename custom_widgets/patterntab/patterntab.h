@@ -6,16 +6,16 @@
 #include <QHash>
 
 #include <models/pattern/pattern.h>
-#include <models/book/Book.h>
+#include <models/library/Library.h>
 
 #include <custom_widgets/patternview/patternview.h>
 
 class PatternTab : public QTreeWidget {
 public:
     PatternTab(QWidget* parent = nullptr);
-    PatternTab(Book* existing_book, QWidget* parent = nullptr);
+    PatternTab(Library* existing_book, QWidget* parent = nullptr);
 
-    constexpr Book* currentBook() const {
+    constexpr Library* currentBook() const {
         return this->_patterns;
     }
 
@@ -28,7 +28,7 @@ private:
     using PatternTabMap = QHash<QTreeWidgetItem*, const Pattern*>;
     using NameTabMap = QHash<QString, QTreeWidgetItem*>;
 
-    Book* _patterns;
+    Library* _patterns;
     PatternTabMap _tabMap;
     NameTabMap _nameMap;
 

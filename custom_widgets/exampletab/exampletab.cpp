@@ -6,12 +6,12 @@
 
 ExampleTab::ExampleTab(QWidget* parent) :
 	QTreeWidget(parent),
-	_bookExample(new Book(PATTERNS_DIRECTORY))
+	_bookExample(new Library(PATTERNS_DIRECTORY))
 {
 	this->init();
 }
 
-ExampleTab::ExampleTab(Book* existing_book, QWidget* parent) :
+ExampleTab::ExampleTab(Library* existing_book, QWidget* parent) :
 	QTreeWidget(parent),
 	_bookExample(existing_book)
 {
@@ -35,6 +35,7 @@ void ExampleTab::handleClick(QTreeWidgetItem* item, SourceCodeView* viewRef) {
 }
 
 void ExampleTab::init() {
+
 
 	for (const Pattern& p : this->_bookExample->patterns()) {
 		if (!this->_typeItemMap.contains(p.type())) {
@@ -81,7 +82,7 @@ void ExampleTab::init() {
 	);
 }
 
-void ExampleTab::filter(const QString& prefix) {
+void ExampleTab::search(const QString& prefix) {
 	switch (this->_filterTypeIndex)
 	{
 	case 0:

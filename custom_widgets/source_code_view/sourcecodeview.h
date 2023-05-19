@@ -1,9 +1,9 @@
 #pragma once
 
-#include <QTextEdit>
+#include <QTextBrowser>
 #include <QFile>
 
-class SourceCodeView : public QTextEdit {
+class SourceCodeView : public QTextBrowser {
     Q_OBJECT
 public:
     SourceCodeView(QWidget* parent = nullptr, QFile* source = nullptr);

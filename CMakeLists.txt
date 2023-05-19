@@ -4,8 +4,8 @@ project(Library VERSION 0.1 LANGUAGES CXX)
 
 # debugging macros
 add_compile_definitions(
-    DEBUG_ON
-    _ADD_DEBUG_CONSOLE
+    #DEBUG_ON
+    #_ADD_DEBUG_CONSOLE
 )
 
 set(CMAKE_AUTOUIC ON)
@@ -62,8 +62,8 @@ set(PROJECT_SOURCES
     models/pattern/code_examples/example.h
     models/pattern/code_examples/example.cpp
 
-    models/book/book.h
-    models/book/book.cpp
+    models/library/Library.h
+    models/library/Library.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->_currentBook = new Book(PATTERNS_DIRECTORY);
+    this->_currentBook = new Library(PATTERNS_DIRECTORY);
     this->ui->tabWidget->setCurrentIndex(0);
 }
 
@@ -38,6 +38,9 @@ void MainWindow::on_patternsTree_itemClicked(QTreeWidgetItem *item, int column) 
 void MainWindow::on_examplesTree_itemClicked(QTreeWidgetItem *item, int column) {
     on_viewFrameChanged(new SourceCodeView());
     this->ui->examplesTree->handleClick(item, reinterpret_cast<SourceCodeView*>(this->ui->viewFrame));
+
+    DEBUG_LOG("Clicked item text:");
+    DEBUG_LOG(item->data(column, 0));
 }
 
 void MainWindow::on_tabWidget_tabBarClicked(int index) {
@@ -47,7 +50,7 @@ void MainWindow::on_tabWidget_tabBarClicked(int index) {
 
 
 void MainWindow::on_descriptionSearchLine_textChanged(const QString &arg1) {
-    // TODO filter stuff in description tree
+    // TODO search stuff in description tree
     DEBUG_LOG("description search query: " + arg1);
 
     this->ui->patternsTree->search(arg1);
@@ -59,6 +62,6 @@ void MainWindow::on_filterTypeSelector_currentIndexChanged(int index) {
 
 
 void MainWindow::on_sourcesSearchLine_textChanged(const QString &arg1) {
-    this->ui->examplesTree->filter(arg1);
+    this->ui->examplesTree->search(arg1);
 }
 

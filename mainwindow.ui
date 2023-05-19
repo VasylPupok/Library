@@ -6,28 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>966</width>
-    <height>596</height>
+    <width>828</width>
+    <height>597</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Бібліотека паттернів</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QGroupBox" name="actionBar">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="title">
-       <string/>
-      </property>
-     </widget>
-    </item>
     <item>
      <layout class="QHBoxLayout" name="viewWidget">
       <item>
@@ -49,6 +36,13 @@
           <string>Опис</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLineEdit" name="descriptionSearchLine">
+            <property name="placeholderText">
+             <string>Пошук</string>
+            </property>
+           </widget>
+          </item>
           <item row="1" column="0">
            <widget class="PatternTab" name="patternsTree">
             <column>
@@ -56,13 +50,6 @@
               <string>Паттерни</string>
              </property>
             </column>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLineEdit" name="descriptionSearchLine">
-            <property name="placeholderText">
-             <string>Пошук</string>
-            </property>
            </widget>
           </item>
          </layout>
@@ -150,7 +137,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>966</width>
+     <width>828</width>
      <height>22</height>
     </rect>
    </property>

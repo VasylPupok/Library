@@ -7,11 +7,11 @@
 
 // TODO add exceptions for case, when info file was not found
 
-class Book {
+class Library {
 public:
 	using PatternList = QList<Pattern>;
 
-	Book(const QString& path);
+	Library(const QString& path);
 
 	constexpr const QString& path() const {
 		return this->_path;

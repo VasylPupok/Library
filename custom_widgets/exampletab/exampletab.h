@@ -4,16 +4,16 @@
 #include <QHash>
 #include <QSet>
 
-#include <models/book/Book.h>
+#include <models/library/Library.h>
 #include <custom_widgets/source_code_view/sourcecodeview.h>
 
 class ExampleTab : public QTreeWidget {
 	Q_OBJECT
 public:
 	ExampleTab(QWidget* parent = nullptr);
-	ExampleTab(Book* existing_book, QWidget* parent = nullptr);
+	ExampleTab(Library* existing_book, QWidget* parent = nullptr);
 
-	constexpr Book* currentBook() const {
+	constexpr Library* currentBook() const {
 		return this->_bookExample;
 	}
 
@@ -24,10 +24,10 @@ public slots:
 		this->_filterTypeIndex = index; 
 	};
 
-	void filter(const QString& prefix);
+	void search(const QString& prefix);
 
 private:
-	Book* _bookExample;
+	Library* _bookExample;
 	QHash<QTreeWidgetItem*, QFile*> _exampleMap;
 
 	QHash<QString, QTreeWidgetItem*> _typeItemMap;

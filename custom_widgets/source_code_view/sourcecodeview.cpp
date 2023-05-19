@@ -1,7 +1,7 @@
 #include "sourcecodeview.h"
 
 SourceCodeView::SourceCodeView(QWidget* parent, QFile* source) :
-	QTextEdit(parent),
+	QTextBrowser(parent),
 	_currentSource(source)
 {
 	readSource();
