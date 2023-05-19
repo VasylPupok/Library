@@ -20,9 +20,9 @@ public:
     }
 
     void handleClick(QTreeWidgetItem *item, PatternView* pdfview);
-    
+   
+public slots:
     void search(const QString& prefix);
-
 
 private:
     using PatternTabMap = QHash<QTreeWidgetItem*, const Pattern*>;
